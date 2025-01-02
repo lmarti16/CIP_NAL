@@ -1,0 +1,355 @@
+/* Tema Personalizado para Shiny usando el Theme Cyborg */
+
+/* Cuerpo Principal */
+body {
+  background: transparent; /* Fondo transparente */
+  color: #FFFFFF; /* Texto blanco */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  transition: background 0.5s ease-in-out; /* Transición suave en el fondo */
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+}
+
+/* Video/Imagen de Fondo con Parallax */
+.video-background {
+  position: fixed; /* Fija la posición del video/imágenes */
+  top: 0;
+  left: 0;
+  min-width: 100%; /* Asegura que el video cubra toda la pantalla */
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Detrás del contenido */
+  overflow: hidden;
+  object-fit: cover; /* Ajusta el video sin deformarlo */
+  filter: brightness(0.7); /* Oscurece ligeramente */
+}
+
+/* Contenido Principal */
+.content {
+  position: relative;
+  z-index: 1; /* Encima del fondo */
+}
+
+/* Botones */
+.btn-primary {
+  background-image: linear-gradient(45deg, #FF416C, #FF4B2B); /* Gradiente atractivo */
+  border: none; /* Sin bordes */
+  font-weight: 700; /* Texto en negrita */
+  font-size: 18px; /* Texto grande */
+  transition: background-image 0.3s ease, transform 0.2s ease; /* Transición suave */
+  border-radius: 10px !important; /* Bordes redondeados */
+}
+.btn-primary:hover {
+  background-image: linear-gradient(45deg, #FF4B2B, #FF416C); /* Gradiente invertido al pasar el mouse */
+  transform: scale(1.05); /* Efecto de ampliación */
+  box-shadow: 0 8px 16px rgba(255, 75, 43, 0.6); /* Sombra al pasar el mouse */
+}
+
+/* Contenedor de Mapas Leaflet */
+.leaflet-container {
+  border: 3px solid #FF416C; /* Bordes de color personalizado */
+  border-radius: 15px; /* Bordes redondeados */
+  transition: border 0.3s ease, transform 0.2s ease; /* Transición al pasar el mouse */
+}
+.leaflet-container:hover {
+  transform: scale(1.01); /* Ampliación leve */
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  font-weight: 700; /* Negrita */
+  margin-bottom: 25px; /* Espaciado inferior */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* Sombra del texto */
+}
+h2, h3 {
+  text-align: center; /* Centrado */
+  font-size: 36px; /* Tamaño moderado */
+  color: #FFFFFF; /* Texto blanco */
+}
+
+/* Pestañas de Navegación */
+.nav-tabs {
+  display: flex; /* Distribución en línea */
+  justify-content: center; /* Centrado horizontal */
+  border-bottom: none; /* Sin borde inferior */
+  margin-top: 20px; /* Margen superior */
+}
+.nav-tabs > li {
+  float: none; /* Evita que se desplacen */
+}
+.nav-tabs > li > a {
+  font-size: 18px; /* Tamaño de texto */
+  font-weight: 600; /* Negrita moderada */
+  color: #FFFFFF; /* Texto blanco */
+  padding: 12px 20px; /* Espaciado interno */
+  margin-right: 5px; /* Espaciado entre pestañas */
+  background-color: rgba(255, 65, 108, 0.7); /* Fondo con transparencia */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transiciones */
+}
+.nav-tabs > li.active > a {
+  background-color: #FF416C; /* Color activo */
+  color: #FFFFFF;
+  box-shadow: 0 5px 15px rgba(255, 65, 108, 0.6); /* Sombra */
+  transform: scale(1.05); /* Ampliación al activarse */
+}
+.nav-tabs > li > a:hover {
+  background-color: #FF4B2B; /* Color al pasar el mouse */
+  color: #FFFFFF;
+  transform: scale(1.03); /* Ampliación leve */
+}
+
+/* Contenedor de Gráficos */
+.plot-container {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: rgba(18, 18, 18, 0.9); /* Fondo oscuro */
+  padding: 15px; /* Espaciado interno */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Pie de Página */
+.footer {
+  text-align: center; /* Centrado del texto */
+  color: #999999; /* Color gris claro */
+}
+
+/* Sliders */
+.irs-bar {
+  background-color: #FF416C !important; /* Barra principal */
+}
+.irs-from, .irs-to, .irs-single {
+  background-color: #FF416C !important; /* Etiquetas del slider */
+  color: white !important; /* Texto blanco */
+  font-weight: bold !important; /* Negrita */
+}
+.irs-line {
+  background: #FF416C !important; /* Línea del slider */
+  height: 8px !important; /* Grosor de la línea */
+}
+.irs-grid-text {
+  color: #FFFFFF !important; /* Texto en blanco */
+  font-size: 14px; /* Tamaño moderado */
+}
+
+/* Animación de Pulso */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(255, 65, 108, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 65, 108, 0);
+  }
+}
+
+/* Sección de Introducción */
+.intro-section {
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(25,25,25,0.8)); /* Fondo en degradado */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 50px 40px; /* Espaciado interno */
+  margin: 0 20px; /* Margen lateral */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.8); /* Sombra profunda */
+  animation: fadeInUp 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Tarjetas Informativas */
+.info-cards {
+  display: flex; /* Diseño en fila */
+  flex-wrap: wrap; /* Permite varias líneas */
+  justify-content: center; /* Centrado horizontal */
+  gap: 40px; /* Espaciado entre tarjetas */
+  margin-top: 40px; /* Margen superior */
+}
+.info-card {
+  background: rgba(255,255,255,0.1); /* Fondo transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  width: 300px; /* Ancho fijo */
+  text-align: center; /* Texto centrado */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones */
+  backdrop-filter: blur(3px); /* Desenfoque */
+}
+.info-card:hover {
+  transform: translateY(-5px); /* Elevación al pasar el mouse */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5); /* Sombra profunda */
+}
+.info-card h3 {
+  color: #FF416C; /* Color principal */
+  margin-bottom: 20px; /* Margen inferior */
+  font-size: 28px; /* Tamaño de texto */
+}
+.info-card p {
+  font-size: 18px; /* Tamaño de texto */
+  color: #FFFFFF; /* Texto blanco */
+  line-height: 1.6; /* Altura de línea */
+}
+
+/* Botón de Llamado a la Acción */
+.cta-button {
+  background-color: #FF416C; /* Fondo del botón */
+  color: #FFFFFF !important; /* Texto blanco */
+  font-size: 22px; /* Texto grande */
+  font-weight: bold; /* Negrita */
+  padding: 15px 30px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-top: 30px; /* Margen superior */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  display: inline-block; /* Bloque en línea */
+  box-shadow: 0 8px 16px rgba(255, 75, 43, 0.6); /* Sombra */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+.cta-button:hover {
+  transform: scale(1.08); /* Ampliación al pasar el mouse */
+}
+
+/* Botón de Menú Flotante */
+.fab-container {
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 30px; /* Posición inferior */
+  right: 30px; /* Posición derecha */
+  z-index: 9999; /* Prioridad en la pantalla */
+}
+.fab-icon {
+  background-color: #FF416C; /* Color del botón */
+  border-radius: 50%; /* Forma circular */
+  width: 65px; /* Tamaño */
+  height: 65px;
+  color: #FFFFFF; /* Texto blanco */
+  font-size: 28px; /* Texto grande */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrados */
+  box-shadow: 0 8px 16px rgba(255, 75, 43, 0.6); /* Sombra */
+  cursor: pointer; /* Cursor interactivo */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+.fab-icon:hover {
+  transform: scale(1.1); /* Ampliación al pasar el mouse */
+}
+
+/* Estilo de Tooltip */
+[data-toggle='tooltip'] {
+  position: relative;
+}
+
+
+# **Parte 1: Definición de la Interfaz de Usuario (UI)**
+
+# Esta función genera la interfaz de usuario para la página de inicio de sesión.
+login_ui <- function() {
+  fluidPage(
+    theme = my_theme, # Tema personalizado
+    tags$head(
+      # Inserta estilos CSS personalizados
+      tags$style(HTML(custom_css)),
+      tags$style(HTML(""
+        /* Estilos personalizados para la página de inicio de sesión */
+        .login-page {
+          position: relative; /* Posición relativa para la página principal */
+          height: 100vh; /* Altura completa de la ventana */
+          display: flex; /* Diseño flexible */
+          align-items: center; /* Alinea verticalmente el contenido */
+          justify-content: center; /* Centra el contenido horizontalmente */
+          overflow: hidden; /* Oculta el contenido desbordante */
+        }
+        .login-page video {
+          position: absolute; /* Posiciona el video como fondo */
+          top: 0;
+          left: 0;
+          width: 100%; /* Asegura que cubra todo el ancho */
+          height: 100%; /* Asegura que cubra toda la altura */
+          object-fit: cover; /* Ajusta el video sin deformarlo */
+          z-index: -1; /* Detrás del contenido principal */
+        }
+        .login-box {
+          background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+          padding: 40px; /* Espaciado interno */
+          border-radius: 15px; /* Bordes redondeados */
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+          text-align: center; /* Centrado del texto */
+          animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+        }
+        .login-title {
+          font-size: 36px; /* Tamaño grande del texto */
+          font-weight: bold; /* Negrita */
+          margin-bottom: 30px; /* Espaciado inferior */
+          color: #FFFFFF; /* Color blanco */
+        }
+        .login-input input {
+          border-radius: 8px; /* Bordes redondeados */
+          padding: 15px; /* Espaciado interno */
+          font-size: 16px; /* Texto moderado */
+          background-color: #222; /* Fondo oscuro */
+          border: none; /* Sin bordes */
+          color: #FFF; /* Texto blanco */
+          margin-bottom: 20px; /* Espaciado inferior */
+        }
+        .btn-login {
+          background-image: linear-gradient(45deg, #FF416C, #FF4B2B); /* Gradiente atractivo */
+          color: white; /* Texto blanco */
+          width: 100%; /* Botón de ancho completo */
+          font-size: 20px; /* Texto grande */
+          border: none; /* Sin bordes */
+          border-radius: 8px; /* Bordes redondeados */
+          padding: 15px; /* Espaciado interno */
+          cursor: pointer; /* Cursor de interacción */
+          transition: background-image 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+        }
+        .btn-login:hover {
+          background-image: linear-gradient(45deg, #FF4B2B, #FF416C); /* Gradiente invertido al pasar el mouse */
+          transform: translateY(-3px); /* Movimiento hacia arriba */
+          box-shadow: 0 8px 16px rgba(255, 75, 43, 0.6); /* Sombra al pasar el mouse */
+        }
+        .notification {
+          text-align: center; /* Centrado del texto */
+          color: #E74C3C; /* Color rojo para notificaciones de error */
+          margin-top: 15px; /* Espaciado superior */
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; } /* Inicio invisible */
+          to { opacity: 1; } /* Final visible */
+        }
+      ""))
+    ),
+    div(
+      class = "login-page", # Clase principal para la página
+      tags$video(
+        src = "background.mp4", # Fuente del video de fondo
+        autoplay = NA, # Reproducción automática
+        muted = NA, # Sin sonido
+        loop = NA # Reproducción en bucle
+      ),
+      div(
+        class = "login-box", # Caja de inicio de sesión
+        img(src = "logovotapiCIP.png", height = "100px", style = "margin-bottom: 20px;"), # Logo
+        h2("Iniciar Sesión", class = "login-title"), # Título
+        div(class = "login-input",
+            textInput("user_name", NULL, placeholder = "Usuario") # Campo de usuario
+        ),
+        div(class = "login-input",
+            passwordInput("password", NULL, placeholder = "Contraseña") # Campo de contraseña
+        ),
+        actionButton("login_button", "Iniciar Sesión", class = "btn-login"), # Botón de inicio
+        div(class = "notification",
+            textOutput("login_error") # Notificación de error
+        ),
+        div(class = "text-center", style = "margin-top: 15px; color: #FFFFFF;",
+            p("Si no tienes una cuenta, contacta al administrador.") # Texto de ayuda
+        )
+      )
+    )
+  )
+}
+
+
+
+
+
