@@ -1,5 +1,21 @@
 /* Tema Personalizado para Shiny usando el Theme Cyborg */
 
+# Define custom theme
+my_theme <- bs_theme(
+  version = 5,
+  bootswatch = "cyborg",
+  primary = "#FF416C",
+  secondary = "#FF4B2B",
+  success = "#28a745",
+  info = "#17a2b8",
+  warning = "#ffc107",
+  danger = "#dc3545",
+  base_font = font_google("Poppins"),
+  heading_font = font_google("Poppins"),
+  code_font = font_google("Fira Code")
+)
+
+custom_css <- "
 /* Cuerpo Principal */
 body {
   background: transparent; /* Fondo transparente */
@@ -239,6 +255,7 @@ h2, h3 {
 [data-toggle='tooltip'] {
   position: relative;
 }
+"
 
 
 # **Parte 1: Definición de la Interfaz de Usuario (UI)**
